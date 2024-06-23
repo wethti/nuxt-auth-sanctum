@@ -111,6 +111,10 @@ export interface SanctumModuleOptions {
      */
     baseUrl: string;
     /**
+    * The base URL of the Laravel API to be used only for server side rendering (uses baseUrl for both client and server side by default)
+    */
+    SSRBaseUrl: string;
+    /**
      * The mode to use for authentication.
      */
     mode: 'cookie' | 'token';

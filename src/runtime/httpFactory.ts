@@ -63,7 +63,7 @@ export function createHttpClient(logger: ConsolaInstance): $Fetch {
     );
 
     const httpOptions: FetchOptions = {
-        baseURL: options.baseUrl,
+        baseURL: import.meta.server ? (options.SSRBaseUrl || options.baseUrl) : options.baseUrl,
         credentials: determineCredentialsMode(),
         redirect: 'manual',
         retry: options.client.retry,
